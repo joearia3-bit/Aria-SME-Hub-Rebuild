@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#dff3ff">
+  <meta name="description" content="ARIA SME HUB helps Papua New Guinea entrepreneurs discover business opportunities.">
+  <title>ARIA SME HUB | Discover Opportunities</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-logo">A</div>
+      <div>
+        <h1>ARIA SME HUB</h1>
+        <p>Discover. Create. Grow.</p>
+      </div>
+    </div>
+    <button id="menuButton" class="menu-button" aria-label="Open menu">
+      ☰
+    </button>
+  </header>
+
+  <nav id="mainNav" class="main-nav">
+    <button class="nav-link active" data-screen="home">Home</button>
+    <button class="nav-link" data-screen="scan">Scan</button>
+    <button class="nav-link" data-screen="opportunities">Opportunities</button>
+    <button class="nav-link" data-screen="assistant">Talk to Aria</button>
+  </nav>
+
+  <main class="app-main">
+
+    <!-- HOME SCREEN -->
+    <section id="home" class="screen active">
+      <div class="welcome-section">
+        <p class="eyebrow">YOUR BUSINESS STARTS HERE</p>
+        <h2>Turn what you have into opportunities.</h2>
+        <p>
+          Discover business ideas, explore markets and find
+          new ways to earn income in Papua New Guinea.
+        </p>
+        <button class="primary-button" data-go="scan">
+          Start Scanning
+        </button>
+      </div>
+
+      <h2 class="section-title">What would you like to do?</h2>
+
+      <div class="feature-grid">
+        <button class="feature-card" data-go="scan">
+          <span class="feature-icon">📷</span>
+          <h3>Scan an Item</h3>
+          <p>Take a photo or upload an image.</p>
+        </button>
+
+        <button class="feature-card" data-go="opportunities">
+          <span class="feature-icon">💡</span>
+          <h3>Business Ideas</h3>
+          <p>Explore ways to make money.</p>
+        </button>
+
+        <button class="feature-card" data-go="opportunities">
+          <span class="feature-icon">🛒</span>
+          <h3>Find Markets</h3>
+          <p>Discover potential selling channels.</p>
+        </button>
+
+        <button class="feature-card" data-go="assistant">
+          <span class="feature-icon">🤖</span>
+          <h3>Talk to Aria</h3>
+          <p>Get help with your business questions.</p>
+        </button>
+      </div>
+
+      <div class="info-panel">
+        <h3>Built for Papua New Guinea</h3>
+        <p>
+          Helping aspiring entrepreneurs, unemployed people
+          and small businesses discover economic opportunities.
+        </p>
+      </div>
+    </section>
+
+    <!-- SCAN SCREEN -->
+    <section id="scan" class="screen">
+      <div class="page-heading">
+        <p class="eyebrow">IMAGE SCANNER</p>
+        <h2>What do you have?</h2>
+        <p>
+          Photograph or upload an item to explore its
+          possible business value.
+        </p>
+      </div>
+
+      <div class="scan-panel">
+        <div id="scanPreview" class="scan-preview">
+          <div class="preview-placeholder">
+            <span>📸</span>
+            <p>Your image will appear here.</p>
+          </div>
+          <img id="previewImage" alt="Selected item preview" hidden>
+        </div>
+
+        <div class="scan-actions">
+          <label for="cameraInput" class="secondary-button">
+            📷 Open Camera
+          </label>
+          <input
+            type="file"
+            id="cameraInput"
+            accept="image/*"
+            capture="environment"
+            hidden
+          >
+
+          <label for="imageInput" class="secondary-button">
+            🖼️ Choose Image
+          </label>
+          <input
+            type="file"
+            id="imageInput"
+            accept="image/*"
+            hidden
+          >
+        </div>
+
+        <button id="analyzeButton" class="primary-button" disabled>
+          Identify Item
+        </button>
+
+        <p id="scanStatus" class="status-message" aria-live="polite">
+          Select an image to begin.
+        </p>
+      </div>
+
+      <div id="scanResults" class="results-panel" hidden>
+        <h3>Business Opportunities</h3>
+        <div id="analysisOutput" aria-live="polite"></div>
+        <button class="secondary-button" data-go="opportunities">
+          Explore Opportunities
+        </button>
+      </div>
+    </section>
+
+    <!-- OPPORTUNITIES SCREEN -->
+    <section id="opportunities" class="screen">
+      <div class="page-heading">
+        <p class="eyebrow">GROW YOUR IDEAS</p>
+        <h2>Business Opportunities</h2>
+        <p>
+          Explore practical ways to create income
+          from available resources.
+        </p>
+      </div>
+
+      <div class="opportunity-list">
+        <article class="opportunity-card">
+          <span class="feature-icon">🌱</span>
+          <h3>Agriculture and Gardening</h3>
+          <p>
+            Explore growing, processing and selling
+            local agricultural products.
+          </p>
+        </article>
+
+        <article class="opportunity-card">
+          <span class="feature-icon">🐟</span>
+          <h3>Fishing and Seafood</h3>
+          <p>
+            Discover opportunities in fishing,
+            food preparation and seafood sales.
+          </p>
+        </article>
+
+        <article class="opportunity-card">
+          <span class="feature-icon">🧺</span>
+          <h3>Local Products and Crafts</h3>
+          <p>
+            Explore handmade goods, traditional
+            products and creative businesses.
+          </p>
+        </article>
+
+        <article class="opportunity-card">
+          <span class="feature-icon">📱</span>
+          <h3>Digital Business</h3>
+          <p>
+            Explore online services, digital
+            products and internet-based businesses.
+          </p>
+        </article>
+      </div>
+
+      <p class="disclaimer">
+        These are general business ideas, not verified
+        market demand or guaranteed income opportunities.
+      </p>
+    </section>
+
+    <!-- AI ASSISTANT SCREEN -->
+    <section id="assistant" class="screen">
+      <div class="page-heading">
+        <p class="eyebrow">YOUR BUSINESS ASSISTANT</p>
+        <h2>Talk to Aria</h2>
+        <p>
+          Ask questions about starting a business,
+          products, customers and business ideas.
+        </p>
+      </div>
+
+      <div class="chat-panel">
+        <div id="chatMessages" class="chat-messages" aria-live="polite">
+          <div class="chat-bubble assistant-message">
+            Hello! I'm Aria. What business idea
+            would you like to explore today?
+          </div>
+        </div>
+
+        <form id="chatForm" class="chat-form">
+          <label class="visually-hidden" for="chatInput">
+            Your message
+          </label>
+          <input
+            id="chatInput"
+            type="text"
+            placeholder="Ask Aria a question..."
+            autocomplete="off"
+            required
+          >
+          <button type="submit" class="primary-button">
+            Send
+          </button>
+        </form>
+
+        <p id="chatStatus" class="status-message" aria-live="polite">
+          AI connection will be added in a later step.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>ARIA SME HUB</p>
+    <p>Empowering Papua New Guinea entrepreneurs.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
